@@ -1,5 +1,5 @@
 import random
-from items import *
+from game.items import *
 
 class Dealer:
     def __init__(self):
@@ -14,7 +14,7 @@ class Dealer:
         elif round == 3:
             self.lives = 6
     
-    def assign_items_to_dealer(self):
+    def assign_items_to_dealer(self,round):
         if len(self.dealer_items) == 8:
             return
         num_items = 0
@@ -30,3 +30,6 @@ class Dealer:
     
     def clear_items(self):
         self.dealer_items = []
+    
+    def show_lives(self):
+        print(f"Dealer has {self.lives} lives left.")

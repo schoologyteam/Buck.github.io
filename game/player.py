@@ -1,9 +1,9 @@
-from items import *
+from game.items import *
 import random
 class Player:
-    def __init__(self, name, score):
+    def __init__(self, name):
         self.name = name
-        self.score = score
+        self.score = 0
         self.lives = 0
         self.player_items = []
         self.starting_money = 100000
@@ -33,4 +33,6 @@ class Player:
     def clear_items(self):
         self.player_items = []
     
-        
+    def show_lives(self):
+        print(f"{self.name} has {self.lives} lives left.")
+    

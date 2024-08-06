@@ -1,11 +1,9 @@
 import random
-
 class Shotgun:
     RED = "Live Round"
     BLUE = "Blank Round"
 
-    def __init__(self, ammo, is_barrel_there=True):
-        self.ammo = ammo
+    def __init__(self, is_barrel_there=True):
         self.clip = []
         self.is_barrel_there = is_barrel_there
 
@@ -35,21 +33,18 @@ class Shotgun:
 
     def change_barrel(self):
         self.is_barrel_there = not self.is_barrel_there
-        # Turn back to true after one use
-        if not self.is_barrel_there:
+
+    def shoot(self, target):
+        if self.clip:
+            bullet = self.clip.pop(0)
+            
+            if bullet == Shotgun.RED:
+                print("It was a live round")
+                if self.is_barrel_there:
+                    target.lives -= 1
+                else:
+                    target.lives -= 2
+            if bullet == Shotgun.BLUE:
+                print("It was a blank round.")
             self.is_barrel_there = True
-
-    def __str__(self):
-        return (f"Ammo: {self.ammo}\n"
-                f"Clip: {self.clip}\n"
-                f"Is Barrel There: {self.is_barrel_there}\n"
-                f"Current Bullet: {self.current_bullet()}")
-
-# Example usage:
-# shotgun = Shotgun(ammo=10)
-# shotgun.load_bullets(stage=2)
-# print(shotgun)
-# print("Current Bullet:", shotgun.current_bullet())
-# print("Random Bullet:", shotgun.random_bullet())
-# shotgun.change_barrel()
-# print("Barrel Changed:", shotgun.is_barrel_there)
+            
