@@ -15,5 +15,7 @@ def give_player_choice(gun: Shotgun, player: Player, dealer: Dealer):
         else:
             print("Invalid choice. Please try again.")
 
-def round_1(gun: Shotgun, player: Player, dealer: Dealer):
-    pass
+def game_round(gun: Shotgun, player: Player, dealer: Dealer, round: int):
+    while player.player_has_lives() or dealer.dealer_has_life():
+        give_player_choice(gun,player,dealer)
+        pass

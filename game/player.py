@@ -33,6 +33,12 @@ class Player:
     def clear_items(self):
         self.player_items = []
     
+    def remove_item(self, item_name):
+        self.player_items.remove(item_name)
+    
+    def player_has_lives(self):
+        return self.lives > 0
+    
     def show_lives(self):
         print(f"{self.name} has {self.lives} lives left.")
     

@@ -31,5 +31,11 @@ class Dealer:
     def clear_items(self):
         self.dealer_items = []
     
+    def remove_item(self, item_name):
+        self.dealer_items.remove(item_name)
+        
+    def dealer_has_life(self):
+        return self.lives > 0
+    
     def show_lives(self):
         print(f"Dealer has {self.lives} lives left.")
