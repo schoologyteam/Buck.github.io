@@ -6,6 +6,7 @@ class Dealer:
         self.lives = 0
         self.dealer_items = []
         self.last_bullet = None
+        self.handcuffed = False
     
     def assign_life_to_dealer(self, round):
         if round == 1:
@@ -43,3 +44,12 @@ class Dealer:
     
     def last_known_bullet(self):
         return self.last_bullet
+
+    def show_all_items(self):
+        print(f"Dealer has the following items: {self.dealer_items}")
+    
+    def is_item_present(self, item):
+        if item in self.dealer_items:
+            return True
+        else:
+            return False

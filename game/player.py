@@ -7,6 +7,7 @@ class Player:
         self.lives = 0
         self.player_items = []
         self.starting_money = 100000
+        self.handcuffed = False
     
     def assign_life_to_player(self, round):
         if round == 1:
@@ -41,4 +42,8 @@ class Player:
     
     def show_lives(self):
         print(f"{self.name} has {self.lives} lives left.")
+    
+    def show_all_items(self, player: Player):
+        print(f"{player.name} has the following items: {self.dealer_items}")
+    
     

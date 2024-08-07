@@ -34,6 +34,12 @@ class Shotgun:
 
     def change_barrel(self):
         self.is_barrel_there = not self.is_barrel_there
+    
+    def eject_bullet(self):
+        if self.clip:
+            bullet = self.clip.pop(0)
+            return bullet
+        return None
 
     def shoot(self, target, shooter):
         live_round_fired = False
