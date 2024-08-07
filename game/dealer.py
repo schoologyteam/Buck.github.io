@@ -5,6 +5,7 @@ class Dealer:
     def __init__(self):
         self.lives = 0
         self.dealer_items = []
+        self.last_bullet = None
     
     def assign_life_to_dealer(self, round):
         if round == 1:
