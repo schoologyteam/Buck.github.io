@@ -40,3 +40,6 @@ class Dealer:
     
     def show_lives(self):
         print(f"Dealer has {self.lives} lives left.")
+    
+    def last_known_bullet(self):
+        return self.last_bullet
